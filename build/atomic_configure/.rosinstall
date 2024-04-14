@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/gbrocks/catkin_ws/devel/setup.sh

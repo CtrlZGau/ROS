@@ -1,0 +1,48 @@
+# Example configuration for robot_localization package
+
+# Localization topics
+odom0: /imu/data
+odom1: /robot_base_velocity_controller/odom
+gps0: /gps/fix
+
+# Configurations for each sensor
+odom0_config: [false, false, false,
+                false, false, false,
+                true,  true,  true,
+                false, false, false,
+                false, false, false]
+odom0_queue_size: 10
+odom0_nodelay: true
+odom0_differential: false
+odom0_relative: true
+
+odom1_config: [true,  true,  true,
+               false, false, false,
+               false, false, false,
+               false, false, false,
+               false, false, false]
+odom1_queue_size: 10
+odom1_nodelay: false
+odom1_differential: false
+odom1_relative: false
+gps0_config: [false, false, false,
+              false, false, false,
+              false, false, false,
+              true,  true,  true,
+              false, false, false]
+
+# Other configuration parameters
+odom_frame: /odom
+base_link_frame: /base_link
+map_frame: /map
+
+# Filtering parameters
+tf_monitor_rate: 50.0
+two_d_mode: true
+frequency: 10.0
+sensor_timeout: 0.5
+transform_timeout: 0.2
+publish_tf: false
+print_diagnostics: true
+debug: false
+debug_out_file: /tmp/robot_localization_debug.txt
